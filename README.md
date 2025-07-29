@@ -45,14 +45,14 @@ Este projeto desenvolve uma **ferramenta completa de Web Scraping e Análise de 
    ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-2.Instale as dependências:
+2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
 
-3.Execute o scraper para coletar os dados:
+3. Execute o scraper para coletar os dados:
    ```bash
    python scraper.py
 
-4.Inicie o dashboard:
+4. Inicie o dashboard:
    ```bash
    streamlit run dashboard.py
