@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import os
 
 url = 'https://lista.mercadolivre.com.br/notebook'
 
@@ -24,7 +25,8 @@ for item in soup.select('.ui-search-result__content-wrapper'):
         'link': link['href'] if link else ''
     })
 
-    df = pd.DataFrame(products)
+df = pd.DataFrame(products)
 
-    df.to_csv('data/products.csv', index=False, encoding='utf-8-sig')
-    print('Dados salvos em data/products.csv')
+os.makedirs('data', exist_ok=True)
+df.to_csv('data/products.csv', index=False, encoding='utf-8-sig')
+print('Dados salvos em data/products.csv')
