@@ -7,32 +7,39 @@ import pandas as pd
 import os
 
 def scrape_mercado_livre(query, pages=1):
-    # Instala o chromedriver compatível automaticamente
     chromedriver_autoinstaller.install()
 
     options = Options()
-    options.add_argument('--headless')  # roda sem abrir janela do navegador
+    options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    options.binary_location = "/usr/bin/chromium"  # caminho do Chromium no Codespaces
+    options.binary_location = "/usr/bin/chromium"
 
     driver = webdriver.Chrome(options=options)
 
     results = []
 
     for page in range(pages):
-        # Monta a url da página de busca Mercado Livre
         url = f"https://lista.mercadolivre.com.br/{query}_Desde_{page*50 + 1}"
         print(f"Acessando página: {url}")
         driver.get(url)
-        time.sleep(2)  # espera a página carregar
+        time.sleep(3)
 
-        products = driver.find_elements(By.CSS_SELECTOR, 'li.ui-search-layout__item')
+        products = driver.find_elements(By.CSS_SELECTOR, 'div.ui-search-result__wrapper')
 
         for product in products:
             try:
                 title = product.find_element(By.CSS_SELECTOR, 'h2.ui-search-item__title').text
-                price = product.find_element(By.CSS_SELECTOR, 'span.price-tag-fraction').text
+                
+                # preço dividido em fração e centavos
+                price_int = product.find_element(By.CSS_SELECTOR, 'span.price-tag-fraction').text
+                price_dec = ''
+                try:
+                    price_dec = product.find_element(By.CSS_SELECTOR, 'span.price-tag-cents').text
+                except:
+                    price_dec = '00'
+                price = f"{price_int},{price_dec}"
+
                 link = product.find_element(By.CSS_SELECTOR, 'a.ui-search-link').get_attribute('href')
 
                 results.append({
@@ -40,12 +47,12 @@ def scrape_mercado_livre(query, pages=1):
                     'Preço (R$)': price,
                     'Link': link
                 })
-            except Exception:
+            except Exception as e:
+                # opcional: print(f"Erro ao capturar produto: {e}")
                 continue
 
     driver.quit()
 
-    # Cria pasta para salvar se não existir
     os.makedirs('data/raw', exist_ok=True)
 
     if results:
@@ -57,3 +64,4 @@ def scrape_mercado_livre(query, pages=1):
 
 if __name__ == "__main__":
     scrape_mercado_livre("tenis feminino", pages=2)
+
