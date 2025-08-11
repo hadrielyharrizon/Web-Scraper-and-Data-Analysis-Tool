@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Produtos</title>
+</head>
+<body>
+
+    <h1>Buscar Produtos no Mercado Livre</h1>
+
+    <form method="POST" action="/buscar">
+        <label>Produto:</label>
+        <input type="text" name="produto" required><br><br>
+
+        <label>Preço Mínimo:</label>
+        <input type="number" name="preco_min" step="0.01"><br><br>
+
+        <label>Preço Máximo:</label>
+        <input type="number" name="preco_max" step="0.01"><br><br>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if mensagem %}
+        <p><strong>{{ mensagem }}</strong></p>
+    {% endif %}
+
+    <a href="/dashboard">Ir para o Dashboard</a>
+</body>
+</html>

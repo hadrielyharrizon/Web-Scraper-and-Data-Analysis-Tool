@@ -1,0 +1,5 @@
+Flask
+Flask-SQLAlchemy
+beautifulsoup4
+requests
+plotly

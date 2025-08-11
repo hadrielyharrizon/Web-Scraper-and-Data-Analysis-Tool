@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Produtos</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <h1>Dashboard de Produtos</h1>
+
+    <form method="get" action="/dashboard">
+        <label>Preço mínimo:</label>
+        <input type="number" name="min" step="0.01" value="{{ preco_min }}"><br>
+        <label>Preço máximo:</label>
+        <input type="number" name="max" step="0.01" value="{{ preco_max }}"><br>
+        <button type="submit">Filtrar</button>
+    </form>
+
+
+    {% if produtos %}
+        <h2>Lista de Produtos ({{ produtos|length }})</h2>
+        <ul>
+        {% for p in produtos %}
+            <li>{{ p.nome }} - R$ {{ "%.2f"|format(p.preco) }} - Avaliação: {{ p.avaliacao if p.avaliacao else 'N/A'}}</li>  
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum produto cadastrado nessa faixa.</p>
+    {% endif %}
+
+    {% if graphJSON %}
+        <div id="grafico"></div>
+        <script>
+            var graph = {{ graphJSON | safe }};
+            Plotly.newPlot('grafico', graph.data, graph.layout);
+        </script>
+    {% endif %}
+
+    <a href="/">Voltar</a>
+</body>
+</html>
