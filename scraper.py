@@ -1,17 +1,48 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
+import sqlite3
 import os
 import datetime
 
+URL = 'https://lista.mercadolivre.com.br/celular'
+CATEGORIA = 'celular'
+PASTA_DATA = 'data'
+os.makedirs(PASTA_DATA, exist_ok=True)
+DATA_HORA = datetime.datetime.now().strftime('%Y%m%S')
 
-def save_data(data, filename="raw_data.txt"):
-    """Salva dados brutos em arquivo."""
-    os.makedirs("data", exist_ok=True)
-    path = os.path.join("data", filename)
+
+def limpar_texto(texto):
+    if texto:
+        return texto.replace('\u202f'," ").replace('�', '').strip()
+    return None
+
+
+def save_data_txt(data, filename):
+    """Salva dados brutos em arquivo TXT."""
+    path = os.path.join(PASTA_DATA, filename)
     with open(path, "w", encoding="utf-8") as f:
         for item in data:
             f.write(f'{item}\n')
-        print(f'Dados salvos em {path}')
+        print(f'Dados salvos em TXT: {path}')
+
+
+def save_data_csv(produtos, filename):
+    """Salva dados brutos em CSV."""
+    df = pd.DataFrame(produtos)
+    path = os.path.join(PASTA_DATA,filename)
+    df.to_csv(path, index=False, encoding='utf-8-sig')
+    print(f'Dados salvos em CSV: {path}')
+    return path
+
+
+def save_data_sqlite(produtos, db_name='mercado_livre.db'):
+    """Salva dados em SQLite."""
+    conn = sqlite3.connect(os.path.join(PASTA_DATA, db_name))
+    df = pd.DataFrame(produtos)
+    df.to_sql('produtos', conn, if_exists='append', index=False)
+    conn.close()
+    print(f'Dados salvos em SQLite: {os.path.join(PASTA_DATA, db_name)}')
 
 
 def scrape_mercado_livre(termo_busca):
@@ -33,25 +64,22 @@ def scrape_mercado_livre(termo_busca):
         f.write(resp.text)
     print('HTML salvo em pagina.html')
 
+
     soup = BeautifulSoup(resp.text, 'html.parser')
 
 
     produtos = []
 
-    itens = soup.select('li.ui-search-layout__item')
-    if not itens:
-        itens = soup.select('div.ui-search-result__wrapper')
-
+    itens = soup.select('li.ui-search-layout__item') or soup.select('div.ui-search-result__wrapper')
     print(f'Quantidade de itens encontrados: {len(itens)}')
 
-
     for item in itens:
-
-        
+ 
         try:
-            preco = 0.0
             nome_tag = item.select_one('h2.ui-search-item__title') or item.select_one('a.poly-component__title') or item.select_one('.ui-search-item__title')
-            nome = nome_tag.get_text(strip=True) if nome_tag else 'Sem nome'
+            nome = limpar_texto(nome_tag.get_text()) if nome_tag else 'Sem nome'
+
+            preco = 0.0
 
             preco_inteiro_tag = item.select_one('span.andes-money-amount__fraction') or item.select_one('span.price-tag-fraction')
             preco_centavos_tag = item.select_one('span.andes-money-amount__cents') or item.select_one('span.price-tag-cents')
@@ -59,26 +87,17 @@ def scrape_mercado_livre(termo_busca):
 
             if preco_inteiro_tag:
                 preco_text = preco_inteiro_tag.get_text(strip=True).replace(".", "").replace(",", ".")
-                try:
-                    preco = float(preco_text)
-                except ValueError:
-                    preco = 0.0
-
+                preco = float(preco_text)
+                
                 if preco_centavos_tag:
                     centavos_text = preco_centavos_tag.get_text(strip=True).zfill(2)       
-                    try:
-                        preco += float('0.' + centavos_text)
-                    except ValueError:
-                        pass   
+                    preco += float('0.' + centavos_text)
+                    
+                    
 
             aval_tag = item.select_one("span.ui-search-reviews__rating-number")
-            avaliacao = None
+            avaliacao = float(aval_tag.get_text(strip=True).replace(',','.')) if aval_tag else None 
             
-            if aval_tag:
-                try:
-                    avaliacao = float(aval_tag.get_text(strip=True).replace(",", "."))
-                except ValueError:
-                    avaliacao = None
 
             produtos.append({
                 "nome": nome,
@@ -90,7 +109,9 @@ def scrape_mercado_livre(termo_busca):
             continue
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    save_data([str(p) for p in produtos], f'mercado_livre_{timestamp}.txt')
+    save_data_txt([str(p) for p in produtos], f'mercado_livre_{timestamp}.txt')
+    save_data_csv(produtos, f'mercado_livre_{timestamp}.csv')
+    save_data_sqlite(produtos)
 
     return produtos
 
