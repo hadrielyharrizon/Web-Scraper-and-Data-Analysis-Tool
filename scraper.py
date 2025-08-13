@@ -46,27 +46,29 @@ def scrape_mercado_livre(termo_busca):
 
 
     for item in itens:
+
+        
         try:
+            preco = 0.0
             nome_tag = item.select_one('h2.ui-search-item__title') or item.select_one('a.poly-component__title') or item.select_one('.ui-search-item__title')
             nome = nome_tag.get_text(strip=True) if nome_tag else 'Sem nome'
 
-            preco_inteiro_tag = item.select_one('span.price-tag-fraction')
-            preco_centavos_tag = item.select_one('span.price-tag-cents')
+            preco_inteiro_tag = item.select_one('span.andes-money-amount__fraction') or item.select_one('span.price-tag-fraction')
+            preco_centavos_tag = item.select_one('span.andes-money-amount__cents') or item.select_one('span.price-tag-cents')
             
-            preco = 0.0
 
             if preco_inteiro_tag:
                 preco_text = preco_inteiro_tag.get_text(strip=True).replace(".", "").replace(",", ".")
                 try:
                     preco = float(preco_text)
-                except:
+                except ValueError:
                     preco = 0.0
 
                 if preco_centavos_tag:
                     centavos_text = preco_centavos_tag.get_text(strip=True).zfill(2)       
                     try:
                         preco += float('0.' + centavos_text)
-                    except:
+                    except ValueError:
                         pass   
 
             aval_tag = item.select_one("span.ui-search-reviews__rating-number")
@@ -95,10 +97,16 @@ def scrape_mercado_livre(termo_busca):
 def coletar_produtos():
     return scrape_mercado_livre("celular")
 
+
 if __name__ == "__main__":
     produtos = coletar_produtos()
     for produto in produtos:
         print(produto)
-
+    
+    print('\nVerificação rápida dos preços: ')
+    for produto in produtos[:10]:
+        nome = produto['nome'].replace('\u202f', ' ')
+        preco = produto['preco']
+        print(f'{nome} - R$ {preco:.2f}')
 
     

@@ -1,0 +1,52 @@
+{'nome': 'Xiaomi Redmi 14c 256gb 16gb Ram Dual Sim Fone+relogio Brinde', 'preco': 1300.61, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Xiaomi Redmi Note 14 Dual Sim 256gb 8gb 4g Global', 'preco': 1349.94, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16, 256gb + 8gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Preto', 'preco': 1855.56, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy A25 5G Dual SIM 128Gb Azul Escuro 6Gb Ram', 'preco': 1570.17, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto G15 - 128gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai E Night Vision Bateria De 5200 Mah Tela Fhd+ 6.7 Com Superbrilho Nfc Azul Escuro', 'preco': 1099.8, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': "Samsung Galaxy A05s 128\u202fGB Dual SIM Tela Infinita de 6,7'' Cor Prata 6\u202fGB RAM", 'preco': 1099.31, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Samsung Galaxy A06 4G 128GB 4GB RAM Dual Chip Câmera Traseira 50+2MP Frontal 8MP Tela 6,7" Android 14.0 Azul Escuro', 'preco': 899.56, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto G15 - 256gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai E Night Vision Bateria De 5200 Mah Tela Fhd+ 6.7 Com Superbrilho Nfc - Grafite', 'preco': 1449.67, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 16 (128 GB) - Preto - Distribuidor Autorizado', 'preco': 7799.25, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A26 5g 256gb, 8gb Ram, Câmera De 50mp, Ip67, Tela Super Amoled 6.7 , Nfc - Branco', 'preco': 1998.83, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Moto G75 5g 256gb Vegan Leather Cor Cinza Motorola', 'preco': 2399.28, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A56 5g 256gb 8gb Ram Verde', 'preco': 3499.9, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto g35 5G - 128GB 12GB (4GB RAM+8GB Ram Boost) e Camera 50MP com AI NFC Tela 6.7" com Superbrilho - Verde - Vegan Leather', 'preco': 1391.72, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16 5g, 128gb + 4gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Azul Escuro', 'preco': 1570.72, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy S24 Fe 5g 128gb 8gb Ram Tela 6.7 Galaxy Ai', 'preco': 4070.5, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Moto G75 5g 256gb Vegan Leather Cor Azul Motorola', 'preco': 2399.44, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy A15 4G Dual SIM 128 GB Azul-claro 4 GB RAM', 'preco': 1069.1, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'iPhone 16e (128 GB) - Preto - Distribuidor Autorizado', 'preco': 5799.56, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 13 (128 GB) Meia-noite - Distribuidor Autorizado', 'preco': 6729.98, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy S24 Galaxy Ai 256GB Preto 8GB RAM', 'preco': 5699.94, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 14 (128 GB) - Meia noite - Distribuidor Autorizado', 'preco': 6239.92, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto G35 5g - 256gb 12gb (4gb Ram+8gb Ram Boost) E Camera 50mp Com Ai Nfc Tela 6.7 Com Superbrilho - Coral - Vegan Leather', 'preco': 1863.54, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy A55 5G Dual SIM 256 GB Azul escuro 8 GB RAM', 'preco': 2999.61, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto g05 - 128GB 12GB (4GB RAM + 8GB Ram Boost) e Camera 50MP com AI Bateria de 5200 mAh Tela 6.7" com Superbrilho - Violeta', 'preco': 999.79, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto g34 5G - 128GB 8GB (4GB RAM+4GB Ram Boost) AI Camera 50MP NFC', 'preco': 1427.05, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 15 (256 GB) - Preto - Distribuidor Autorizado', 'preco': 8095.07, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy S24 Ultra, 256gb, 12gb Ram, 6.8 , Ai Cor Titânio-black', 'preco': 9199.9, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy S25 5G, 256GB, 12GB, Câmera Tripla - Azul claro', 'preco': 6999.25, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16 5g, 256gb + 8gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Azul Escuro', 'preco': 1949.9, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16, 128gb + 4gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Verde Claro', 'preco': 1549.1, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy S24 Fe 5g, 256gb, 8gb Ram, Tela 6.7 Cor Cinza-escuro', 'preco': 5699.11, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Samsung Galaxy A06 Dual SIM 128 GB verde-claro 4 GB RAM (Novo com caixa aberta)', 'preco': 899.99, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': "Smartphone Samsung Galaxy A25 5G 256GB 8GB Ram Dual SIM Android 14 Azul-Escuro 6,5''", 'preco': 1598.11, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Samsung Galaxy A25 5G 8GB RAM 256GB Tela de 6.5', 'preco': 2099.96, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 15 (128 GB) - Azul - Distribuidor Autorizado', 'preco': 7209.35, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Simples Positivo P26 Rede 4g Dual Chip Radio Mp3 Cor Preto', 'preco': 235.71, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Samsung Galaxy A36 5G 128GB 6GB RAM Recursos AI', 'preco': 2355.44, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto G56 5g - 256gb 16gb (8gb Ram+8gb Ram Boost) Camera 50mp Sony Lytia 600 certificado de Ultrarresistencia Militar e Ip68 + Ip69 - Verde', 'preco': 1999.25, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto G86 5g - 256gb 24gb (8gb Ram+16gb Ram Boost) Tela 1.5k Poled, 50mp Sony Camera Ois Moto Ai, Videos Em 4k, Ip68 + Ip69 - Vermelho', 'preco': 2499.55, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16, 256gb + 8gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Cinza', 'preco': 1749.69, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Positivo Twist 5 64GB Dual Chip, Tela notch de 6.26”, Câmera Traseira e Frontal de 8MP, Android 12 Go – Black Rubber', 'preco': 698.57, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A56 5g 128gb 8gb Ram Preto', 'preco': 2999.83, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Samsung Galaxy A16, 128gb + 4gb Ram, Câmera De Até 50mp, Tela 6.7 , Nfc, Ip54, Bateria 5000 Mah Cinza', 'preco': 1549.1, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Realme C63 Dual Sim 128 Gb Azul 6 Gb Ram', 'preco': 1459.55, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Positivo P51 Flip 4G Dual Sim 128 MB Preto 42 MB RAM', 'preco': 225.16, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Realme Note 60 Dual Sim 64 Gb Azul 3 Gb Ram Preto', 'preco': 899.9, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Samsung Galaxy S24 FE 5G 256GB 8GB RAM Tela 6.7" Galaxy AI - Azul', 'preco': 5699.22, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Moto g35 5G - 256GB 12GB (4GB RAM+8GB Ram Boost) e Camera 50MP com AI NFC Tela 6.7" com Superbrilho - Cinza', 'preco': 1599.64, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Apple iPhone 16 (256 GB) - Branco - Distribuidor Autorizado', 'preco': 8599.68, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'iPhone 16e (256 Gb) - Preto - Distribuidor Autorizado', 'preco': 6599.19, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Celular Up Play Multilaser Dual Chip Câmera Preto P9076', 'preco': 101.01, 'avaliacao': None, 'categoria': 'celular'}
+{'nome': 'Smartphone Motorola Edge 60 Pro 5g - 256gb 24gb (12gb Ram+12gb Ram Boost) Tela Quad-curve Moto Ai 50mp Sony Camera Ultrarresistencia Militar Ip68 + Ip69 - Violeta', 'preco': 4299.9, 'avaliacao': None, 'categoria': 'celular'}
