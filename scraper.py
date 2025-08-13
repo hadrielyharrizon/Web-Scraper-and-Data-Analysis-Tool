@@ -4,6 +4,7 @@ import pandas as pd
 import sqlite3
 import os
 import datetime
+import matplotlib.pyplot as plt
 
 URL = 'https://lista.mercadolivre.com.br/celular'
 CATEGORIA = 'celular'
@@ -118,6 +119,32 @@ def scrape_mercado_livre(termo_busca):
 def coletar_produtos():
     return scrape_mercado_livre("celular")
 
+def analisar_produtos(produtos):
+    """Realiza análise rápida de preços e avaliações."""
+    if not produtos:
+        print("Nenhum produto para analisar.")
+        return
+    precos = [p['preco'] for p in produtos if p['preco'] is not None]
+    avaliacoes = [p['avaliacao'] for p in produtos if p ['avaliacao'] is not None]
+
+    print('\n---Análise rápida---')
+    print(f'Quantidade de produtos: {len(produtos)}')
+    print(f'Preço médio: R$ {sum(precos)/len(precos):.2f}')
+    print(f'Produto mais barato: R$ {min(precos):.2f}')
+    print(f'Produto mais caro: R$ {max(precos):.2f}')
+
+    if avaliacoes:
+        print(f'Avaliação média: {sum(avaliacoes)/len(avaliacoes):.2f}')
+    else:
+        print('Não há avaliações disponíveis.')
+
+    #Grafico
+    plt.figure(figsize=(10,5))
+    plt.hist(precos, bins=10, color='skyblue', edgecolor='black')
+    plt.title('Distribuição de preços')
+    plt.xlabel('Preço (R$)')
+    plt.ylabel('Quantidade de produtos')
+    plt.show()
 
 if __name__ == "__main__":
     produtos = coletar_produtos()
@@ -130,4 +157,5 @@ if __name__ == "__main__":
         preco = produto['preco']
         print(f'{nome} - R$ {preco:.2f}')
 
+    analisar_produtos(produtos)
     

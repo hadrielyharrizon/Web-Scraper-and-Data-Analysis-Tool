@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python: Scraper",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scraper.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {},
+            "python": "${workspaceFolder}/venv/Scripts/python.exe"
+        }
+    ]
+}
