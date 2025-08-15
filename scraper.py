@@ -37,14 +37,15 @@ def save_data_csv(produtos, filename):
     return path
 
 
-def save_data_sqlite(produtos, db_name='mercado_livre.db'):
-    """Salva dados em SQLite."""
-    conn = sqlite3.connect(os.path.join(PASTA_DATA, db_name))
+def save_data_sqlite(produtos, db_name='produtos.db'):
+    """Salva dados em SQLite na raix do projeto."""
+    db_path = os.path.abspath(db_name)
+    conn = sqlite3.connect(db_path)
     df = pd.DataFrame(produtos)
     df.to_sql('produtos', conn, if_exists='append', index=False)
+    total = conn.execute('SELECT COUNT(*) FROM produtos').fetchone()[0]
     conn.close()
-    print(f'Dados salvos em SQLite: {os.path.join(PASTA_DATA, db_name)}')
-
+    print(f"Dados salvos em SQLite: {db_path} (linhas na tabela 'produtos': {total})")
 
 def scrape_mercado_livre(termo_busca):
     termo_url = termo_busca.strip().replace(' ', '-')
